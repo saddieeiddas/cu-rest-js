@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "cu-rest-api",
+  "version": "0.1.0",
+  "description": "",
+  "license": "MPL-2.0",
+  "main": "lib/main.js",
+  "contributors": [
+    "ludimli <ludovic.tricot@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ludimli/cu-rest-api.git"
+  },
+  "dependencies": {
+    "cu-core": "^0.1.4",
+    "es6-promise": "^3.0.2",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "cu-build-tools": "git+https://github.com/CUModSquad/cu-build-tools.git#master",
+    "cu-fake-api": "git+https://github.com/Ludimli/cu-fake-api.git",
+    "cu-tsd": "git+https://github.com/Ludimli/cu-tsd.git",
+    "gulp": "^3.9.0"
+  },
+  "typescript": {
+    "definition": "lib/cu-rest-api.d.ts"
+  }
+}
