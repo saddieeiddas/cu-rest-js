@@ -2,9 +2,33 @@
 
 declare module 'cu-rest-api' {
     class CuRestLibrary {
-        login(email: string, password: string): Promise<{}>;
-        fetchCharacters(loginToken: LoginToken): Promise<{}>;
-        fetchAbilities(characterID: CharacterID, loginToken: LoginToken): Promise<{}>;
+        static login(email: string, password: string): Promise<{}>;
+        static fetchServers(channelID: ChannelID): Promise<{}>;
+        static fetchBanners(): Promise<{}>;
+        static fetchRaces(): Promise<{}>;
+        static fetchFactions(): Promise<{}>;
+        static fetchArchetypes(): Promise<{}>;
+        static fetchBanes(): Promise<{}>;
+        static fetchBoons(): Promise<{}>;
+        static fetchAttributes(): Promise<{}>;
+        static fetchAbilities(): Promise<{}>;
+        static fetchAbility(id: AbilityID): Promise<{}>;
+        static fetchBuildingBlocks(): Promise<{}>;
+        static fetchScheduledEvents(type?: ScheduledEventType): Promise<{}>;
+        static fetchSpawnPoints(): Promise<{}>;
+        static fetchPlayers(): Promise<{}>;
+        static fetchPatchNotes(): Promise<{}>;
+        static fetchKills(data?: {}): Promise<{}>;
+        static fetchKillsByFaction(faction: FactionName): Promise<{}>;
+        static fetchKillsByKiller(killer: CharacterID): Promise<{}>;
+        static fetchKillsByAttacker(attacker: CharacterID): Promise<{}>;
+        static fetchKillsByVictim(victim: CharacterID): Promise<{}>;
+        static fetchKillsByDates(start: Iso8601, end?: Iso8601): Promise<{}>;
+        static fetchCraftedAbilities(): Promise<{}>;
+        static fetchControlGame(): Promise<{}>;
+        static fetchCharacters(loginToken: LoginToken): Promise<{}>;
+        static createCharacter(loginToken: LoginToken, name: string, faction: FactionName, race: RaceName, gender: GenderName, archetype: ArchetypeName, attributes: PrimaryAttributesStatsUppercase, banes: ActiveBanes, boons: ActiveBoons): Promise<{}>;
+        static deleteCharacter(loginToken: LoginToken, characterID: CharacterID): Promise<{}>;
     }
     export default CuRestLibrary;
 }
