@@ -115,12 +115,14 @@ class CuRestLibrary {
         return CuRestLibrary.request<AbilityModel[]>('api/abilities');
     }
     
-    static fetchAbility(id: AbilityID) {
-        return CuRestLibrary.request<AbilityModel>({
-            url: `${CuRestLibrary.regularUrl}api/abilities`,
-            data: {id},
-        });
-    }
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/abilities
+    // static fetchAbility(id: AbilityID) {
+    //     return CuRestLibrary.request<AbilityModel>({
+    //         url: `${CuRestLibrary.regularUrl}api/abilities`,
+    //         data: {id},
+    //     });
+    // }
 
     static fetchBuildingBlocks() {
         return CuRestLibrary.request<BuildingBlockModel[]>('api/buildingblocks');

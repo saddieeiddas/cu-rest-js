@@ -329,10 +329,10 @@ interface PrimaryAttributesStatsUppercase {
 }
 
 interface RaceModel extends Model<RaceID, RaceName> {
-	abilities?: AbilityModel[];
-	banes?: BaneModel[];
-	boons?: BoonModel[];
-	description?: string;
+	abilities: AbilityModel[];
+	banes: BaneModel[];
+	boons: BoonModel[];
+	description: string;
 }
 
 interface SecondaryAttributesStats {
