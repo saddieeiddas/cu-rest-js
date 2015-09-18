@@ -2,8 +2,8 @@ describe("Cu Rest Library", function() {
   
     var Rest = CuRestLibrary.default;
 
-    var loginEMail = '';
-    var loginPassword = '';
+    var loginEMail = window.prompt('email?');
+    var loginPassword = window.prompt('password?');
     var loginToken = null;
     var character = null;
     var characterID = null;
