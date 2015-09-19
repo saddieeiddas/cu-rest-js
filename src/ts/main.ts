@@ -143,7 +143,7 @@ class CuRestLibrary {
     }
 
     static fetchPlayers() {
-        return CuRestLibrary.request<PlayersCountModel[]>('api/game/players');
+        return CuRestLibrary.request<PlayersCountModel>('api/game/players');
     }
 
     static fetchPatchNotes() {
@@ -156,28 +156,38 @@ class CuRestLibrary {
             data,
         });
     }
-
-    static fetchKillsByFaction(faction: FactionName) {
-        return CuRestLibrary.fetchKills({faction});
-    }
     
-    static fetchKillsByKiller(killer: CharacterID) {
-        return CuRestLibrary.fetchKills({killer});
-    }
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/kills
+    // static fetchKillsByFaction(faction: FactionName) {
+    //     return CuRestLibrary.fetchKills({faction});
+    // }
     
-    static fetchKillsByAttacker(attacker: CharacterID) {
-        return CuRestLibrary.fetchKills({attacker});
-    }
-
-    static fetchKillsByVictim(victim: CharacterID) {
-        return CuRestLibrary.fetchKills({victim});
-    }
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/kills
+    // static fetchKillsByKiller(killer: CharacterID) {
+    //     return CuRestLibrary.fetchKills({killer});
+    // }
     
-    static fetchKillsByDates(start: Iso8601, end?: Iso8601) {
-        return CuRestLibrary.fetchKills({start, end});
-    }
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/kills
+    // static fetchKillsByAttacker(attacker: CharacterID) {
+    //     return CuRestLibrary.fetchKills({attacker});
+    // }
 
-    static fetchCraftedAbilities() {
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/kills
+    // static fetchKillsByVictim(victim: CharacterID) {
+    //     return CuRestLibrary.fetchKills({victim});
+    // }
+    
+    // DOES NOT WORK
+    // found on: http://belatucadros.net/cu/wiki/index.php?title=/api/kills
+    // static fetchKillsByDates(start: Iso8601, end?: Iso8601) {
+    //     return CuRestLibrary.fetchKills({start, end});
+    // }
+
+    static fetchDefaultAbilities() {
         return CuRestLibrary.request<DefaultCraftedAbilityList>('api/craftedabilities/defaults');
     }
 
@@ -232,6 +242,7 @@ class CuRestLibrary {
         });
     }
     
+    // DOES NOT WORK
     // static fetchCharacterAbilities(loginToken: LoginToken, characterID: CharacterID) {
     //     return CuRestLibrary.request<void>({
     //         url: `${CuRestLibrary.secureUrl}api/craftedabilities`,

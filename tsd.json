@@ -4,5 +4,9 @@
   "ref": "master",
   "path": "src/tsd",
   "bundle": "src/tsd/tsd.d.ts",
-  "installed": {}
+  "installed": {
+    "jquery/jquery.d.ts": {
+      "commit": "6f6e5c7dd9effe21fee14eb65fe340ecbbc8580a"
+    }
+  }
 }

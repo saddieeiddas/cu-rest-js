@@ -1,4 +1,4 @@
-cu-rest-api
+cu-rest-js
 ======================
 
 > example CU-UI library structure

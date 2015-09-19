@@ -4,7 +4,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-var name = 'cu-rest-api';
+var name = 'cu-rest-js';
 
 module.exports = {
   type: 'library',

@@ -58,50 +58,6 @@ interface AbilityModel {
     triggerTime: number;
 }
 
-interface DefaultCraftedAbilityList {
-	arthurian: {
-		fireMage: DefaultCraftedAbilityModel[];
-		fighter: DefaultCraftedAbilityModel[];
-		healer: DefaultCraftedAbilityModel[];
-	};
-	tdd: {
-		earthMage: DefaultCraftedAbilityModel[];
-		fighter: DefaultCraftedAbilityModel[];
-		healer: DefaultCraftedAbilityModel[];
-	};
-	viking: {
-		waterMage: DefaultCraftedAbilityModel[];
-		fighter: DefaultCraftedAbilityModel[];
-		healer: DefaultCraftedAbilityModel[];
-	};
-}
-
-interface DefaultCraftedAbilityModel {
-	id: number,
-	characterID: {
-		isNull: boolean;
-		isValid: boolean;
-		shardID: {
-			isValid: boolean;
-		}
-	};
-	shardID: {
-		isValid: boolean;
-	};
-	name: string;
-	icon: string;
-	notes: string;
-	rootComponentSlot: ComponentModel;
-}
-
-interface CraftedAbilityModel extends AbilityModel {
-    characterID: CharacterID;
-    notes: string;
-    rootComponentSlot: ComponentModel;
-    shardID: ShardID;
-    stats: AbilityStatsModel;
-}
-
 interface AbilityStatsModel {
     bloodCost?: number;
     cooldownTime?: number;
@@ -169,6 +125,13 @@ interface BaneModel extends BaneAndBoonModel {
 	id: BaneID;
 }
 
+interface BannerModel {
+	id: BannerID,
+    content: HtmlString,
+    created: Iso8601,
+    modified: Iso8601
+}
+
 interface BoonModel extends BaneAndBoonModel {
 	id: BoonID;
 }
@@ -193,19 +156,6 @@ interface CharacterModel {
 	shardID: ShardID;
 }
 
-interface OwnCharacterModel {
-	archetype: Model<ArchetypeID, ArchetypeName>;
-	attributes: PrimaryAttributesStats;
-	banes: ActiveBanes;
-	boons: ActiveBoons;
-	faction: Model<FactionID, FactionName>;
-	id: CharacterID;
-	lastLogin: Iso8601;
-	name: string;
-	race: Model<RaceID, RaceName>;
-	shardID: ShardID;
-}
-
 interface ComponentModel {
     baseComponentID: ComponentID;
     children: ComponentModel[];
@@ -216,6 +166,50 @@ interface ControlPointModel extends Vector2 {
 	faction: FactionLetter;
 	id: ControlPointID;
 	size: SizeLetter;
+}
+
+interface CraftedAbilityModel extends AbilityModel {
+    characterID: CharacterID;
+    notes: string;
+    rootComponentSlot: ComponentModel;
+    shardID: ShardID;
+    stats: AbilityStatsModel;
+}
+
+interface DefaultCraftedAbilityList {
+	arthurian: {
+		fireMage: DefaultCraftedAbilityModel[];
+		fighter: DefaultCraftedAbilityModel[];
+		healer: DefaultCraftedAbilityModel[];
+	};
+	tdd: {
+		earthMage: DefaultCraftedAbilityModel[];
+		fighter: DefaultCraftedAbilityModel[];
+		healer: DefaultCraftedAbilityModel[];
+	};
+	viking: {
+		waterMage: DefaultCraftedAbilityModel[];
+		fighter: DefaultCraftedAbilityModel[];
+		healer: DefaultCraftedAbilityModel[];
+	};
+}
+
+interface DefaultCraftedAbilityModel {
+	id: number,
+	characterID: {
+		isNull: boolean;
+		isValid: boolean;
+		shardID: {
+			isValid: boolean;
+		}
+	};
+	shardID: {
+		isValid: boolean;
+	};
+	name: string;
+	icon: string;
+	notes: string;
+	rootComponentSlot: ComponentModel;
 }
 
 interface DerivedAttributesStats {
@@ -286,6 +280,19 @@ interface LoginResponse {
 interface Model<ID, Name> {
 	name: Name;
 	value: ID;
+}
+
+interface OwnCharacterModel {
+	archetype: Model<ArchetypeID, ArchetypeName>;
+	attributes: PrimaryAttributesStats;
+	banes: ActiveBanes;
+	boons: ActiveBoons;
+	faction: Model<FactionID, FactionName>;
+	id: CharacterID;
+	lastLogin: Iso8601;
+	name: string;
+	race: Model<RaceID, RaceName>;
+	shardID: ShardID;
 }
 
 interface PatchNoteModel {
@@ -365,9 +372,3 @@ interface Vector3 extends Vector2 {
 	z: number;
 }
 
-interface BannerModel {
-	id: BannerID,
-    content: HtmlString,
-    created: Iso8601,
-    modified: Iso8601
-}
