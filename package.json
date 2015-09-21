@@ -4,9 +4,22 @@
   "version": "0.3.0",
   "description": "",
   "license": "MPL-2.0",
-  "main": "lib/main.js",
+  "main": "src/ts/main.ts",
   "contributors": [
     "ludimli <ludovic.tricot@gmail.com>"
+  ],
+  "keywords": [
+    "Camelot",
+    "Unchained",
+    "cu",
+    "cu-ui",
+    "rest"
+  ],
+  "files": [
+    "lib/",
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
@@ -18,7 +31,7 @@
     "jquery": "^2.1.4"
   },
   "devDependencies": {
-    "cu-build-tools": "git+https://github.com/CUModSquad/cu-build-tools.git#master",
+    "cu-build-tools": "^0.1.8",
     "gulp": "^3.9.0"
   },
   "typescript": {
